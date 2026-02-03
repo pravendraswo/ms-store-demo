@@ -4,7 +4,7 @@
 # To make this agent available, merge this file into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:Custom security agent1
+name: Custom security agent1
 description: Check of security lapses
 ---
 
