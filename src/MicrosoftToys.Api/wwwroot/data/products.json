@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 1,
+    "Name": "Microsoft Azure Plushie",
+    "Description": "Soft azure cloud plushie perfect for retailers. Cuddle with the power of cloud computing!",
+    "Price": 24.99,
+    "Category": "Plushies",
+    "Images": [
+      "azure-plushie-1.jpg"
+    ],
+    "InStock": true,
+    "Inventory": 50,
+    "Created": "2026-02-03T06:54:57.8242787+00:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Microsoft Teams Figurine",
+    "Description": "Collectible Teams mascot figurine - perfect for your desk or retail display",
+    "Price": 19.99,
+    "Category": "Figurines",
+    "Images": [
+      "teams-figurine-1.jpg"
+    ],
+    "InStock": true,
+    "Inventory": 30,
+    "Created": "2026-02-03T06:54:57.8243716+00:00"
+  },
+  {
+    "Id": 3,
+    "Name": "Office 365 Stress Ball",
+    "Description": "Office-themed stress relief toy - squeeze away your productivity stress!",
+    "Price": 12.99,
+    "Category": "Tech Toys",
+    "Images": [
+      "office-stress-ball.jpg"
+    ],
+    "InStock": true,
+    "Inventory": 75,
+    "Created": "2026-02-03T06:54:57.824373+00:00"
+  },
+  {
+    "Id": 4,
+    "Name": "Xbox Controller Plushie",
+    "Description": "Soft and huggable Xbox controller - for gamers who love comfort",
+    "Price": 29.99,
+    "Category": "Plushies",
+    "Images": [
+      "xbox-controller.jpg"
+    ],
+    "InStock": true,
+    "Inventory": 40,
+    "Created": "2026-02-03T06:54:57.8243742+00:00"
+  },
+  {
+    "Id": 5,
+    "Name": "OneDrive Cloud Buddy",
+    "Description": "Your personal cloud storage companion - cute and functional desk accessory",
+    "Price": 22.99,
+    "Category": "Plushies",
+    "Images": [
+      "onedrive-cloud.jpg"
+    ],
+    "InStock": true,
+    "Inventory": 35,
+    "Created": "2026-02-03T06:54:57.8243746+00:00"
+  }
+]

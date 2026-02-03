@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- OneDrive blue gradient -->
+  <defs>
+    <linearGradient id="onedriveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0078D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1BA1E2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cloud base -->
+  <ellipse cx="150" cy="200" rx="110" ry="70" fill="url(#onedriveGrad)" stroke="#005A9E" stroke-width="2"/>
+  <ellipse cx="110" cy="175" rx="50" ry="40" fill="url(#onedriveGrad)" stroke="#005A9E" stroke-width="2"/>
+  <ellipse cx="190" cy="175" rx="50" ry="40" fill="url(#onedriveGrad)" stroke="#005A9E" stroke-width="2"/>
+  <ellipse cx="150" cy="150" rx="70" ry="50" fill="url(#onedriveGrad)" stroke="#005A9E" stroke-width="2"/>
+  
+  <!-- OneDrive logo -->
+  <circle cx="150" cy="160" r="25" fill="white"/>
+  <path d="M 135 155 L 150 140 L 165 155 L 165 170 L 150 170 L 135 170 Z" fill="#0078D4"/>
+  <rect x="143" y="175" width="14" height="3" fill="#0078D4"/>
+  
+  <!-- Cute cloud face -->
+  <circle cx="130" cy="180" r="6" fill="white"/>
+  <circle cx="170" cy="180" r="6" fill="white"/>
+  <circle cx="130" cy="180" r="3" fill="#333"/>
+  <circle cx="170" cy="180" r="3" fill="#333"/>
+  <path d="M 140 195 Q 150 205 160 195" stroke="#333" stroke-width="2" fill="none"/>
+  
+  <!-- Cloud texture -->
+  <path d="M 70 170 Q 150 165 230 170" stroke="white" stroke-width="1" opacity="0.4" fill="none"/>
+  <path d="M 80 190 Q 150 185 220 190" stroke="white" stroke-width="1" opacity="0.4" fill="none"/>
+  <path d="M 90 210 Q 150 205 210 210" stroke="white" stroke-width="1" opacity="0.4" fill="none"/>
+  
+  <text x="150" y="280" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0078D4" font-weight="bold">OneDrive Cloud Buddy</text>
+</svg>

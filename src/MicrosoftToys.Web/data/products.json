@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Microsoft Azure Plushie",
+    "description": "Soft azure cloud plushie",
+    "price": 24.99,
+    "category": "Plushies",
+    "images": ["azure-plushie-1.jpg", "azure-plushie-2.jpg"],
+    "inStock": true,
+    "inventory": 50,
+    "created": "2026-02-03T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Microsoft Teams Figurine",
+    "description": "Collectible Teams mascot figurine",
+    "price": 19.99,
+    "category": "Figurines",
+    "images": ["teams-figurine-1.jpg"],
+    "inStock": true,
+    "inventory": 30,
+    "created": "2026-02-03T00:00:00Z"
+  }
+]

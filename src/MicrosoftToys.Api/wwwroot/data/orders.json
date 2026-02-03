@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "customerName": "John's Toy Store",
+    "customerEmail": "retailer@example.com",
+    "items": [
+      {
+        "productId": 1,
+        "name": "Microsoft Azure Plushie",
+        "quantity": 2,
+        "price": 24.99
+      }
+    ],
+    "total": 49.98,
+    "status": "pending",
+    "shippingAddress": "123 Main St, City, Country",
+    "created": "2026-02-03T00:00:00Z"
+  }
+]
