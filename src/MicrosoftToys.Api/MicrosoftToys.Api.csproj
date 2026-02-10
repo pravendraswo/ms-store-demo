@@ -12,6 +12,7 @@
     <!-- VULNERABILITY: Old version with known security issues for Dependabot testing -->
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
 </Project>
