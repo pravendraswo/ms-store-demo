@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MicrosoftToys.Api.Models;
 using MicrosoftToys.Api.Services;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace MicrosoftToys.Api.Controllers
 {
@@ -28,6 +29,23 @@ namespace MicrosoftToys.Api.Controllers
             var product = _service.GetById(id);
             if (product == null) return NotFound();
             return product;
+        }
+
+        // VULNERABILITY: SQL Injection - This method is intentionally vulnerable for GHAS testing
+        [HttpGet("search")]
+        public ActionResult<List<Product>> SearchProducts(string searchTerm)
+        {
+            // This is a SQL injection vulnerability for testing purposes
+            string connectionString = "Server=localhost;Database=ProductsDB;Trusted_Connection=True;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Vulnerable: directly concatenating user input into SQL query
+                string query = "SELECT * FROM Products WHERE Name LIKE '%" + searchTerm + "%'";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                // Execute query logic would go here
+                return Ok(new List<Product>());
+            }
         }
 
         [HttpPost]

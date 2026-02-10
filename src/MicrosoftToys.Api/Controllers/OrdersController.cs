@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MicrosoftToys.Api.Models;
 using MicrosoftToys.Api.Services;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace MicrosoftToys.Api.Controllers
 {
@@ -28,6 +29,20 @@ namespace MicrosoftToys.Api.Controllers
             var order = _service.GetById(id);
             if (order == null) return NotFound();
             return order;
+        }
+
+        // VULNERABILITY: Command Injection - This method is intentionally vulnerable for GHAS testing
+        [HttpPost("export")]
+        public IActionResult ExportOrder(string fileName)
+        {
+            // This is a command injection vulnerability for testing purposes
+            // Vulnerable: directly using user input in system command
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "/c echo Exporting to " + fileName;
+            process.Start();
+            
+            return Ok("Export started");
         }
 
         [HttpPost]
