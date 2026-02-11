@@ -7,6 +7,7 @@ function loadProducts() {
         .then(response => response.json())
         .then(products => {
             const list = document.getElementById('product-list');
+            const wishlistItems = getWishlist();
             list.innerHTML = '';
             products.forEach(product => {
                 const col = document.createElement('div');
@@ -14,6 +15,7 @@ function loadProducts() {
                 const imageUrl = product.images && product.images.length > 0 
                     ? `/images/products/${product.images[0]}`
                     : '/images/products/placeholder.jpg';
+                const inWishlist = wishlistItems.some(item => item.productId === product.id);
                 col.innerHTML = `
                     <div class="card mb-3">
                         <img src="${imageUrl}" class="card-img-top" alt="${product.name}" style="height: 250px; object-fit: cover;">
@@ -23,6 +25,7 @@ function loadProducts() {
                             <p class="card-text"><strong>$${product.price.toFixed(2)}</strong></p>
                             <p class="card-text"><small class="text-muted">Category: ${product.category} | In Stock: ${product.inventory}</small></p>
                             <button class="btn btn-primary btn-block" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Add to Cart</button>
+                            <button class="btn btn-outline-secondary btn-block mt-2" data-wishlist-btn="${product.id}" onclick="addToWishlist(${product.id}, '${product.name}', ${product.price}, '${imageUrl}')" ${inWishlist ? 'disabled' : ''}>${inWishlist ? 'In Wishlist' : 'Add to Wishlist'}</button>
                         </div>
                     </div>
                 `;
@@ -44,4 +47,32 @@ function addToCart(productId, name, price) {
     
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Added to cart!');
+}
+
+function addToWishlist(productId, name, price, imageUrl) {
+    const wishlist = getWishlist();
+    const existingItem = wishlist.find(item => item.productId === productId);
+    
+    if (existingItem) {
+        setWishlistButtonState(productId, true);
+        alert('Already in wishlist');
+        return;
+    }
+
+    wishlist.push({ productId, name, price, image: imageUrl });
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    setWishlistButtonState(productId, true);
+    alert('Added to wishlist!');
+}
+
+function getWishlist() {
+    return JSON.parse(localStorage.getItem('wishlist') || '[]');
+}
+
+function setWishlistButtonState(productId, inWishlist) {
+    const button = document.querySelector(`[data-wishlist-btn="${productId}"]`);
+    if (button) {
+        button.textContent = inWishlist ? 'In Wishlist' : 'Add to Wishlist';
+        button.disabled = inWishlist;
+    }
 }
