@@ -53,6 +53,14 @@ body {
     padding: 10px;
 }
 
+.wishlist-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
 /* Admin panel styling */
 .admin-product-image {
     width: 60px;
